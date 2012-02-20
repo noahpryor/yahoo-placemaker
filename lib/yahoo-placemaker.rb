@@ -6,17 +6,18 @@ require "net/http"
 module Yahoo
   module Placemaker
 
-    def self.extract (text = '')
+    def self.extract (text = '', options = {})
+
       host = 'wherein.yahooapis.com'
-      payload = {
-        'documentContent' => text,
-        'appid' => APP_ID,
-        'outputType' => 'json',
-        'documentType' => 'text/plain'
-      }
+
+      # These options need to be explicitly set!
+      options['documentContent'] = text
+      options['appid'] = Yahoo::Placemaker::APP_ID
+      options['outputType'] = 'json'
+      options['documentType'] = 'text/plain'
 
       req = ::Net::HTTP::Post.new('/v1/document')
-      req.body = to_url_params(payload)
+      req.body = to_url_params(options)
       response = ::Net::HTTP.new(host).start do |http|
         http.request(req)
       end

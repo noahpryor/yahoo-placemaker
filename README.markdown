@@ -11,4 +11,4 @@
     
 ## Contributing
 
-I am by not means a Ruby guru so if you have seen something that I have done incorrectly or that could be improved please feel free to contribute some code!
+I am by not means a Ruby guru so if you have seen something that I have done incorrectly or that could be improved please feel free to contribute some code!h
