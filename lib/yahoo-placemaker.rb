@@ -1,6 +1,7 @@
 require "yahoo-placemaker/version"
-require 'json'
-require 'ostruct'
+require "json"
+require "ostruct"
+require "net/http"
 
 module Yahoo
   module Placemaker
@@ -14,12 +15,14 @@ module Yahoo
         'documentType' => 'text/plain'
       }
 
-      req = Net::HTTP::Post.new('/v1/document')
+      req = ::Net::HTTP::Post.new('/v1/document')
       req.body = to_url_params(payload)
-      response = Net::HTTP.new(host).start {|http| http.request(req) }
-      json = JSON.parse(response.body)
-      return OpenStruct.new(json)
+      response = ::Net::HTTP.new(host).start do |http|
+        http.request(req)
       end
+      json = ::JSON.parse(response.body)
+      OpenStruct.new(json)
+    end
 
       private
 
