@@ -6,7 +6,7 @@
 ## Examples
 
     require 'yahoo-placemaker'
-    Yahoo::Placemaker.APP_ID = 'xxxx'
+    Yahoo::Placemaker::APP_ID = 'xxxx'
     place = Yahoo::Placemaker.extact "Columbus Ohio is my hometown"
     
 ## Contributing
