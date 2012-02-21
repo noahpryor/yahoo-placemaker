@@ -2,8 +2,11 @@
 
 `yahoo-placemaker` is a rubygem that allows for easy interaction w/ the [Yahoo Placemaker](http://developer.yahoo.com/geo/placemaker) API.
 
+## Installation
 
-## Examples
+    gem install yahoo-placemaker
+
+## Usage
 
     require 'yahoo-placemaker'
     Yahoo::Placemaker::APP_ID = 'xxxx'
@@ -11,4 +14,4 @@
     
 ## Contributing
 
-I am by not means a Ruby guru so if you have seen something that I have done incorrectly or that could be improved please feel free to contribute some code!h
+I am by not means a Ruby guru so if you have seen something that I have done incorrectly or that could be improved please feel free to contribute some code.
