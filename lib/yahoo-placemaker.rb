@@ -1,4 +1,7 @@
 require "yahoo-placemaker/version"
+require "yahoo-placemaker/response"
+require "yahoo-placemaker/version"
+
 require "json"
 require "ostruct"
 require "net/http"
@@ -22,7 +25,9 @@ module Yahoo
         http.request(req)
       end
       json = ::JSON.parse(response.body)
-      OpenStruct.new(json)
+
+      Yahoo::Placemaker::Response.new(json)
+
     end
 
       private
