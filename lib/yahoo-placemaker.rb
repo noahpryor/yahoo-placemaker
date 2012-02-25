@@ -3,7 +3,6 @@ require "yahoo-placemaker/response"
 require "yahoo-placemaker/version"
 
 require "json"
-require "ostruct"
 require "net/http"
 
 module Yahoo
