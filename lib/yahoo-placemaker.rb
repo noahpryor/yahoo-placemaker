@@ -10,7 +10,7 @@ module Yahoo
     # Main method for interacting w/ the Yahoo! Placemaker API
 
     def self.extract (text = '', options = {})
-
+      result = nil
       host = 'wherein.yahooapis.com'
 
       # These options need to be explicitly set!
@@ -27,10 +27,12 @@ module Yahoo
         end
         json = ::JSON.parse(response.body)
 
-        Yahoo::Placemaker::Response.new(json)
+        result = Yahoo::Placemaker::Response.new(json)
       rescue Exception => e
         # Something has gone horribly wrong...
       end
+
+      result
 
     end
 
