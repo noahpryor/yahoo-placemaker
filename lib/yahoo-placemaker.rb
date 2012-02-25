@@ -7,6 +7,8 @@ require "net/http"
 module Yahoo
   module Placemaker
 
+    # Main method for interacting w/ the Yahoo! Placemaker API
+
     def self.extract (text = '', options = {})
 
       host = 'wherein.yahooapis.com'
