@@ -1,14 +1,13 @@
 require 'yahoo-placemaker/geographic_scope'
 require 'yahoo-placemaker/local_scope'
 require 'yahoo-placemaker/administrative_scope'
-require 'yahoo-placemaker/reference_list'
 require 'yahoo-placemaker/reference'
 require 'yahoo-placemaker/extents'
 require 'yahoo-placemaker/place'
 require 'yahoo-placemaker/places'
 
 class Yahoo::Placemaker::Document
-  attr_accessor :administrative_scope, :geographic_scope, :local_scopes, :reference_list, :extents, :place_details, :places
+  attr_accessor :administrative_scope, :geographic_scope, :local_scopes, :references, :extents, :place_details, :places
   def initialize(json)
 
     if json['administrativeScope']
@@ -24,6 +23,7 @@ class Yahoo::Placemaker::Document
     end
 
     @places = Yahoo::Placemaker::Places.new
+
     # if the placeDetails key exists then that means that we
     # only have one result so we'll just use it. Otherwise
     # yahoo has given us back some POORLY formatted data which
@@ -57,14 +57,16 @@ class Yahoo::Placemaker::Document
       @extents = Yahoo::Placemaker::Extents.new(json['extents'])
     end
 
-    @reference_list = Yahoo::Placemaker::ReferenceList.new
+    # referenceList -> references
+
+    @references = Array.new
     if json['referenceList']
       if json['referenceList'].class == Array
         json['referenceList'].each do |reference|
-          @reference_list << Yahoo::Placemaker::Reference.new(reference)
+          @references << Yahoo::Placemaker::Reference.new(reference)
         end
       else
-        @reference_list << Yahoo::Placemaker::Reference.new(json['referenceList'])
+        @references << Yahoo::Placemaker::Reference.new(json['referenceList']['reference'])
       end
     end
 

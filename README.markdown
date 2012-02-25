@@ -17,6 +17,7 @@
     result = Yahoo::Placemaker.extract "Columbus Ohio is my hometown"
     result.document.geographic_scope.name # Columbus, OH, US
     result.document.administrative_scope.centroid.latitude # 39.962
+    result.document.references.first.text # Columbus Ohio
     
 ## Contributing
 

@@ -3,8 +3,8 @@ class Yahoo::Placemaker::Reference
 
   def initialize(json)
     @woe_ids = json['woeIds']
-    @end = json['end']
-    @start = json['start']
+    @end = json['end'].to_i
+    @start = json['start'].to_i
     @place_reference_id = json['placeReferenceId']
     @place_ids = json['placeIds']
     @text = json['text']
