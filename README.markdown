@@ -4,7 +4,7 @@
 
 ## Build Status
 
-![](https://secure.travis-ci.org/kyledecot/yahoo-placemaker.png)
+![Build Status](https://secure.travis-ci.org/kyledecot/yahoo-placemaker.png)
 
 ## Installation
 
@@ -14,7 +14,9 @@
 
     require 'yahoo-placemaker'
     Yahoo::Placemaker::APP_ID = 'xxxx'
-    place = Yahoo::Placemaker.extract "Columbus Ohio is my hometown"
+    result = Yahoo::Placemaker.extract "Columbus Ohio is my hometown"
+    result.document.geographic_scope.name # Columbus, OH, US
+    result.document.administrative_scope.centroid.latitude # 39.962
     
 ## Contributing
 

@@ -12,8 +12,12 @@ class Yahoo::Placemaker::LocalScope < Yahoo::Placemaker::Scope
     @south_west = Yahoo::Placemaker::LatLng.new json['southWest']
     @north_east = Yahoo::Placemaker::LatLng.new json['northEast']
     @ancestors = Array.new
-    json['ancestors'].each do |ancestor|
-      @ancestors << Yahoo::Placemaker::Ancestor.new(ancestor['ancestor'])
+    if json['ancestors'].class == Array
+      json['ancestors'].each do |ancestor|
+        @ancestors << Yahoo::Placemaker::Ancestor.new(ancestor['ancestor'])
+      end
+    else
+        @ancestors << Yahoo::Placemaker::Ancestor.new(json['ancestors']['ancestor'])
     end
   end
 end
