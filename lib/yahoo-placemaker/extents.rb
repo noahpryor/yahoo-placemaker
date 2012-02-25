@@ -9,4 +9,5 @@ class Yahoo::Placemaker::Extents
     @south_west = Yahoo::Placemaker::LatLng.new(json['southWest'])
     @north_east = Yahoo::Placemaker::LatLng.new(json['northEast'])
   end
+
 end
