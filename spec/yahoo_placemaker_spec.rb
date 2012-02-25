@@ -23,4 +23,11 @@ describe Yahoo::Placemaker do
     end
   end
 
+  it "doesn't return any places for 'foobar'" do
+    VCR.use_cassette('foobar') do
+        response = Yahoo::Placemaker.extract "foobar"
+        response.document.geographic_scope.should == nil
+    end
+  end
+
 end

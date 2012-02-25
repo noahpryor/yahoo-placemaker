@@ -29,11 +29,16 @@ class Yahoo::Placemaker::Document
     # yahoo has given us back some POORLY formatted data which
     # is in numeric keys so we'll search for them and pull them out
 
-    if json.has_key? 'placeDetails'
+    if json['placeDetails']
         @places << Yahoo::Placemaker::Place.new(json['placeDetails'])
-    else
-      (json.map{ |k,v| k =~ /^[\d]+$/ ? v : nil }).compact.each do |place|
-        @places << Yahoo::Placemaker::Place.new(place['placeDetails'])
+    end
+
+    if json.class == Array
+      multiple_place_details = (json.map{ |k,v| k =~ /^[\d]+$/ ? v : nil }).compact
+      if multiple_place_details.any?
+        multiple_place_details.each do |place|
+            @places << Yahoo::Placemaker::Place.new(place['placeDetails'])
+        end
       end
     end
 
