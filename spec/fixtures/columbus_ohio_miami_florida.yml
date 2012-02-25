@@ -1,0 +1,50 @@
+---
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :post
+    uri: http://wherein.yahooapis.com:80/v1/document
+    body: documentContent=columbus ohio miami florida&appid=xxx&outputType=json&documentType=text/plain
+    headers: !!null 
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Sat, 25 Feb 2012 01:25:49 GMT
+      p3p:
+      - policyref="http://info.yahoo.com/w3c/p3p.xml", CP="CAO DSP COR CUR ADM DEV
+        TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND PHY
+        ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV"
+      x-yahoo-serving-host:
+      - wws01.geotech.bf1.yahoo.com
+      cache-control:
+      - public, must-revalidate
+      content-language:
+      - en
+      vary:
+      - Accept-Encoding
+      content-type:
+      - application/json; charset=UTF-8
+      age:
+      - '0'
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      via:
+      - HTTP/1.1 r06.ycpi.che.yahoo.net (YahooTrafficServer/1.20.10 [cMsSf ])
+      server:
+      - YTS/1.20.10
+    body: ! '{"processingTime":"0.002347","version":"1.4.0.526 build 111113","documentLength":"27","document":{"administrativeScope":{"woeId":"23424977","type":"Country","name":"United
+      States","centroid":{"latitude":"37.1679","longitude":"-95.845"}},"geographicScope":{"woeId":"56043648","type":"Timezone","name":"America\/New_York,
+      US","centroid":{"latitude":"36.2052","longitude":"-76.273"}},"localScopes":[{"localScope":{"woeId":"2383660","type":"Town","name":"Columbus,
+      OH, US (Town)","centroid":{"latitude":"39.962","longitude":"-83.003"},"southWest":{"latitude":"39.7956","longitude":"-83.1934"},"northEast":{"latitude":"40.1461","longitude":"-82.7495"},"ancestors":[{"ancestor":{"woeId":"12589551","type":"County","name":"Franklin"}},{"ancestor":{"woeId":"2347594","type":"State","name":"Ohio"}},{"ancestor":{"woeId":"23424977","type":"Country","name":"United
+      States"}}]}},{"localScope":{"woeId":"2450022","type":"Town","name":"Miami, FL,
+      US (Town)","centroid":{"latitude":"25.729","longitude":"-80.2374"},"southWest":{"latitude":"25.5403","longitude":"-80.4469"},"northEast":{"latitude":"25.9578","longitude":"-80.028"},"ancestors":[{"ancestor":{"woeId":"12587815","type":"County","name":"Miami-Dade"}},{"ancestor":{"woeId":"2347568","type":"State","name":"Florida"}},{"ancestor":{"woeId":"23424977","type":"Country","name":"United
+      States"}}]}}],"extents":{"center":{"latitude":"39.962","longitude":"-83.003"},"southWest":{"latitude":"25.5403","longitude":"-83.1934"},"northEast":{"latitude":"40.1461","longitude":"-80.028"}},"0":{"placeDetails":{"placeId":"1","place":{"woeId":"2383660","type":"Town","name":"Columbus,
+      OH, US","centroid":{"latitude":"39.962","longitude":"-83.003"}},"placeReferenceIds":"2","matchType":"0","weight":"1","confidence":"10"}},"1":{"placeDetails":{"placeId":"2","place":{"woeId":"2450022","type":"Town","name":"Miami,
+      FL, US","centroid":{"latitude":"25.729","longitude":"-80.2374"}},"placeReferenceIds":"1","matchType":"0","weight":"1","confidence":"10"}},"referenceList":[{"reference":{"woeIds":"2450022","placeReferenceId":"1","placeIds":"2","start":"14","end":"27","isPlaintextMarker":"1","text":"miami
+      florida","type":"plaintext","xpath":""}},{"reference":{"woeIds":"2383660","placeReferenceId":"2","placeIds":"1","start":"0","end":"13","isPlaintextMarker":"1","text":"columbus
+      ohio","type":"plaintext","xpath":""}}]}}'
+    http_version: '1.1'
