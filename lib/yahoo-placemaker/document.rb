@@ -41,8 +41,8 @@ class Yahoo::Placemaker::Document
       end
     end
 
+    @local_scopes = Array.new
     if json['localScopes']
-      @local_scopes = Array.new
       if json['localScopes'].class == Array
         json['localScopes'].each do |ls|
           @local_scopes << Yahoo::Placemaker::LocalScope.new(ls['localScope'])
