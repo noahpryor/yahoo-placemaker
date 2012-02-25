@@ -54,8 +54,12 @@ class Yahoo::Placemaker::Document
 
     @reference_list = Yahoo::Placemaker::ReferenceList.new
     if json['referenceList']
-      json['referenceList'].each do |reference|
-        @reference_list << Yahoo::Placemaker::Reference.new(reference)
+      if json['referenceList'].class == Array
+        json['referenceList'].each do |reference|
+          @reference_list << Yahoo::Placemaker::Reference.new(reference)
+        end
+      else
+        @reference_list << Yahoo::Placemaker::Reference.new(json['referenceList'])
       end
     end
 
