@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Yahoo::Placemaker do
 
   it "determines we're talking about Columbus, Ohio" do
-  VCR.use_cassette('columbus ohio') do
+    VCR.use_cassette('columbus ohio') do
       response = Yahoo::Placemaker.extract "columbus ohio"
       response.document.administrative_scope.name.should == "Columbus, OH, US"
     end
