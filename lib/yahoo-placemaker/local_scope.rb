@@ -1,6 +1,5 @@
 require 'yahoo-placemaker/scope'
 require 'yahoo-placemaker/ancestor'
-require 'yahoo-placemaker/centroid'
 
 class Yahoo::Placemaker::LocalScope < Yahoo::Placemaker::Scope
 
@@ -8,7 +7,7 @@ class Yahoo::Placemaker::LocalScope < Yahoo::Placemaker::Scope
 
   def initialize (json)
     super(json)
-    @centroid = Yahoo::Placemaker::Centroid.new json['centroid']
+    @centroid = Yahoo::Placemaker::LatLng.new json['centroid']
     @south_west = Yahoo::Placemaker::LatLng.new json['southWest']
     @north_east = Yahoo::Placemaker::LatLng.new json['northEast']
     @ancestors = Array.new

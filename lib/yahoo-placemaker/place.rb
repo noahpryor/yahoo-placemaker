@@ -1,4 +1,4 @@
-require 'yahoo-placemaker/centroid'
+require 'yahoo-placemaker/lat_lng'
 
 class Yahoo::Placemaker::Place
 
@@ -8,7 +8,7 @@ class Yahoo::Placemaker::Place
   def initialize(json)
 
     @place_id = json['placeId']
-    @centroid = Yahoo::Placemaker::Centroid.new json['place']['centroid']
+    @centroid = Yahoo::Placemaker::LatLng.new json['place']['centroid']
     @type = json['place']['type']
     @woe_id = json['place']['woeId']
     @name = json['place']['name']

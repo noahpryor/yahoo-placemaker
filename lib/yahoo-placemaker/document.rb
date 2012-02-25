@@ -4,7 +4,6 @@ require 'yahoo-placemaker/administrative_scope'
 require 'yahoo-placemaker/reference'
 require 'yahoo-placemaker/extents'
 require 'yahoo-placemaker/place'
-require 'yahoo-placemaker/places'
 
 class Yahoo::Placemaker::Document
   attr_accessor :administrative_scope, :geographic_scope, :local_scopes, :references, :extents, :place_details, :places
@@ -22,7 +21,7 @@ class Yahoo::Placemaker::Document
       @administrative_scope = Yahoo::Placemaker::AdministrativeScope.new(json['administrativeScope'])
     end
 
-    @places = Yahoo::Placemaker::Places.new
+    @places = Array.new
 
     # if the placeDetails key exists then that means that we
     # only have one result so we'll just use it. Otherwise
