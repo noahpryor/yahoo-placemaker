@@ -1,7 +1,7 @@
 require 'yahoo-placemaker/scope'
 require 'yahoo-placemaker/centroid'
 
-class Yahoo::Placemaker::GeographicScope < Yahoo::Placemaker::Scope
+class Yahoo::Placemaker::AdministrativeScope < Yahoo::Placemaker::Scope
   def initialize (json)
     @woe_id = json['woeId']
     @type = json['type']

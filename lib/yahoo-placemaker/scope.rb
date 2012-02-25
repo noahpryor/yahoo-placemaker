@@ -1,3 +1,3 @@
 class Yahoo::Placemaker::Scope
-  attr_accessor :woeId, :type, :name, :centroid
+  attr_accessor :woe_id, :type, :name, :centroid
 end
