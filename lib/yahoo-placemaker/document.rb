@@ -2,6 +2,7 @@ require 'yahoo-placemaker/geographic_scope'
 require 'yahoo-placemaker/local_scope'
 require 'yahoo-placemaker/administrative_scope'
 require 'yahoo-placemaker/reference_list'
+require 'yahoo-placemaker/reference'
 require 'yahoo-placemaker/extents'
 require 'yahoo-placemaker/place'
 require 'yahoo-placemaker/places'
@@ -51,8 +52,11 @@ class Yahoo::Placemaker::Document
       @extents = Yahoo::Placemaker::Extents.new(json['extents'])
     end
 
+    @reference_list = Yahoo::Placemaker::ReferenceList.new
     if json['referenceList']
-      @reference_list = Yahoo::Placemaker::ReferenceList.new json['referenceList']
+      json['referenceList'].each do |reference|
+        @reference_list << Yahoo::Placemaker::Reference.new(reference)
+      end
     end
 
   end
