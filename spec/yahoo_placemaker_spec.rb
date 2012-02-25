@@ -19,7 +19,7 @@ describe Yahoo::Placemaker do
   it "contains only one item in reference_list when given 'Atlanta Georgia'" do
     VCR.use_cassette('atlanta_georgia') do
         response = Yahoo::Placemaker.extract "Atlanta Georgia"
-        response.document.reference_list.size.should == 1
+        response.document.references.size.should == 1
     end
   end
 
