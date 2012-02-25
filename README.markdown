@@ -10,6 +10,10 @@
 
     gem install yahoo-placemaker
 
+## Documentation
+
+http://rdoc.info/github/kyledecot/yahoo-placemaker/master/frames
+
 ## Usage
 
     require 'yahoo-placemaker'
