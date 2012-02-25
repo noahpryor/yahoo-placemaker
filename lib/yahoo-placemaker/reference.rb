@@ -1,7 +1,7 @@
 class Yahoo::Placemaker::Reference
   attr_accessor :woe_ids, :end, :start, :place_reference_id, :place_ids, :text, :type, :xpath, :is_plaintext_marker
 
-  def initalize(json)
+  def initialize(json)
 
     @woe_ids = json['woeIds']
     @end = json['end']
