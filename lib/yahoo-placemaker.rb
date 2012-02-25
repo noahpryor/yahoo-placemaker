@@ -1,4 +1,3 @@
-require "yahoo-placemaker/version"
 require "yahoo-placemaker/response"
 require "yahoo-placemaker/version"
 
@@ -29,14 +28,13 @@ module Yahoo
 
     end
 
-      private
+    private
 
-      def self.to_url_params(h)
-      elements = []
-      h.keys.size.times do |i|
-      elements << "#{h.keys[i]}=#{h.values[i]}"
-      end
-      elements.join('&')
+    # Takes a hash and turns it into a query string that can be used
+    # in a URL request
+
+    def self.to_url_params(params)
+      params.collect{|key, value| "#{key}=#{value}"}.join('&')
     end
 
   end
