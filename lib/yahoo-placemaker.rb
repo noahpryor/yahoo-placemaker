@@ -21,12 +21,16 @@ module Yahoo
 
       req = ::Net::HTTP::Post.new('/v1/document')
       req.body = to_url_params(options)
-      response = ::Net::HTTP.new(host).start do |http|
-        http.request(req)
-      end
-      json = ::JSON.parse(response.body)
+      begin
+        response = ::Net::HTTP.new(host).start do |http|
+          http.request(req)
+        end
+        json = ::JSON.parse(response.body)
 
-      Yahoo::Placemaker::Response.new(json)
+        Yahoo::Placemaker::Response.new(json)
+      rescue Exception => e
+        # Something has gone horribly wrong...
+      end
 
     end
 
