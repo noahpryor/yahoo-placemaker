@@ -8,13 +8,11 @@ require "net/http"
 module Yahoo
   module Placemaker
 
-  APP_ID = nil
-
     # Main method for interacting w/ the Yahoo! Placemaker API
 
     def self.extract (text = '', options = {})
 
-      if Yahoo::Placemaker::APP_ID.nil?
+      unless defined?(Yahoo::Placemaker::APP_ID)
         raise Yahoo::Placemaker::Exception.new("Invalid APP_ID")
       end
 
