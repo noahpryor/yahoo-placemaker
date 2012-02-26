@@ -15,8 +15,10 @@ class Yahoo::Placemaker::LocalScope < Yahoo::Placemaker::Scope
       json['ancestors'].each do |ancestor|
         @ancestors << Yahoo::Placemaker::Ancestor.new(ancestor['ancestor'])
       end
-    else
+    elsif json['ancestors'].class == Hash
         @ancestors << Yahoo::Placemaker::Ancestor.new(json['ancestors']['ancestor'])
+    else
+      # no ancestors...country?
     end
   end
 end

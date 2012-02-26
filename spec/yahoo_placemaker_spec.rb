@@ -23,6 +23,13 @@ describe Yahoo::Placemaker do
     end
   end
 
+  it "doesn't return any ancestors for 'France'" do
+    VCR.use_cassette('france') do
+      response = Yahoo::Placemaker.extract "France"
+      response.document.local_scopes.first.ancestors.should == Array.new
+    end
+  end
+
   it "doesn't return any places for 'foobar'" do
     VCR.use_cassette('foobar') do
         response = Yahoo::Placemaker.extract "foobar"

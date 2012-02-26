@@ -29,6 +29,7 @@ module Yahoo
 
         result = Yahoo::Placemaker::Response.new(json)
       rescue Exception => e
+       # puts e
         # Something has gone horribly wrong...
       end
 
