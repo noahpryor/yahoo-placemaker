@@ -1,4 +1,5 @@
 require "yahoo-placemaker/response"
+require "yahoo-placemaker/exception"
 require "yahoo-placemaker/version"
 
 require "json"
@@ -7,9 +8,16 @@ require "net/http"
 module Yahoo
   module Placemaker
 
+  APP_ID = nil
+
     # Main method for interacting w/ the Yahoo! Placemaker API
 
     def self.extract (text = '', options = {})
+
+      if Yahoo::Placemaker::APP_ID.nil?
+        raise Yahoo::Placemaker::Exception.new("Invalid APP_ID")
+      end
+
       result = nil
       host = 'wherein.yahooapis.com'
 
