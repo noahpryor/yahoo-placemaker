@@ -43,5 +43,4 @@ describe Yahoo::Placemaker do
         response.document.geographic_scope.should == nil
     end
   end
-
 end
