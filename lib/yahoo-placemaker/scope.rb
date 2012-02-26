@@ -1,6 +1,7 @@
 require 'yahoo-placemaker/lat_lng'
 
 class Yahoo::Placemaker::Scope
+
   attr_accessor :woe_id, :type, :name, :centroid
 
   def initialize(json)
