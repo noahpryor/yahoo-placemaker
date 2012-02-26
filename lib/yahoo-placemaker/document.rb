@@ -32,7 +32,7 @@ class Yahoo::Placemaker::Document
         @places << Yahoo::Placemaker::Place.new(json['placeDetails'])
     end
 
-    if json.class == Array
+    if json.class == Hash
       multiple_place_details = (json.map{ |k,v| k =~ /^[\d]+$/ ? v : nil }).compact
       if multiple_place_details.any?
         multiple_place_details.each do |place|

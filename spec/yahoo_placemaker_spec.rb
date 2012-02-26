@@ -16,6 +16,13 @@ describe Yahoo::Placemaker do
     end
   end
 
+  it "returns two places (a country, and a city)" do
+    VCR.use_cassette('France Columbus Ohio') do
+      response = Yahoo::Placemaker.extract "Columbus Ohio France"
+      response.document.places.size.should == 2
+    end
+  end
+
   it "contains only one item in reference_list when given 'Atlanta Georgia'" do
     VCR.use_cassette('atlanta_georgia') do
         response = Yahoo::Placemaker.extract "Atlanta Georgia"
