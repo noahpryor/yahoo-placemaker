@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.version     = Yahoo::Placemaker::VERSION
   s.authors     = ["Kyle Decot"]
   s.email       = ["kyle.decot@me.com"]
-  s.homepage    = ""
+  s.homepage    = "http://github.com/kyledecot/yahoo-placemaker"
   s.summary     = "Easily interact w/ the Yahoo Placemaker API"
   s.description = "Easily interact w/ the Yahoo Placemaker API"
 
