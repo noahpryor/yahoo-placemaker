@@ -1,9 +1,9 @@
-require 'yahoo-placemaker/geographic_scope'
-require 'yahoo-placemaker/local_scope'
-require 'yahoo-placemaker/administrative_scope'
-require 'yahoo-placemaker/reference'
-require 'yahoo-placemaker/extents'
-require 'yahoo-placemaker/place'
+require 'yahoo/placemaker/geographic_scope'
+require 'yahoo/placemaker/local_scope'
+require 'yahoo/placemaker/administrative_scope'
+require 'yahoo/placemaker/reference'
+require 'yahoo/placemaker/extents'
+require 'yahoo/placemaker/place'
 
 module Yahoo
   module Placemaker

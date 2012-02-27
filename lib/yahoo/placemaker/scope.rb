@@ -1,4 +1,4 @@
-require 'yahoo-placemaker/lat_lng'
+require 'yahoo/placemaker/lat_lng'
 
 module Yahoo
   module Placemaker

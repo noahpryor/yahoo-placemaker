@@ -1,6 +1,6 @@
-require "yahoo-placemaker/response"
-require "yahoo-placemaker/exception"
-require "yahoo-placemaker/version"
+require "yahoo/placemaker/response"
+require "yahoo/placemaker/exception"
+require "yahoo/placemaker/version"
 
 require "json"
 require "net/http"

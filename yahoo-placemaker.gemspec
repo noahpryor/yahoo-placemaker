@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 $:.push File.expand_path("../lib", __FILE__)
-require "yahoo-placemaker/version"
+require "yahoo/placemaker/version"
 
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY

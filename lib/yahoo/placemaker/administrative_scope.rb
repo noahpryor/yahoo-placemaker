@@ -1,4 +1,4 @@
-require 'yahoo-placemaker/scope'
+require 'yahoo/placemaker/scope'
 
 module Yahoo
   module Placemaker

@@ -1,4 +1,4 @@
-require 'yahoo-placemaker/document'
+require 'yahoo/placemaker/document'
 
 module Yahoo
   module Placemaker

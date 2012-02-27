@@ -1,5 +1,5 @@
-require 'yahoo-placemaker/scope'
-require 'yahoo-placemaker/ancestor'
+require 'yahoo/placemaker/scope'
+require 'yahoo/placemaker/ancestor'
 
 module Yahoo
   module Placemaker
