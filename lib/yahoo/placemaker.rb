@@ -12,6 +12,8 @@ module Yahoo
 
     def self.extract (text = '', options = {})
 
+      # TODO: make sure only valid options are passed in..
+
       unless defined?(Yahoo::Placemaker::APP_ID)
         raise Yahoo::Placemaker::Exception.new("Invalid APP_ID")
       end
