@@ -1,2 +1,6 @@
-class Yahoo::Placemaker::Exception < Exception
+module Yahoo
+  module Placemaker
+    class Exception < Exception
+    end
+  end
 end

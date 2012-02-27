@@ -1,4 +1,8 @@
 require 'yahoo-placemaker/scope'
 
-class Yahoo::Placemaker::AdministrativeScope < Yahoo::Placemaker::Scope
+module Yahoo
+  module Placemaker
+    class AdministrativeScope < Yahoo::Placemaker::Scope
+    end
+  end
 end

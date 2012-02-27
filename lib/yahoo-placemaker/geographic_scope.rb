@@ -1,4 +1,8 @@
 require 'yahoo-placemaker/scope'
 
-class Yahoo::Placemaker::GeographicScope < Yahoo::Placemaker::Scope
+module Yahoo
+  module Placemaker
+    class GeographicScope < Yahoo::Placemaker::Scope
+    end
+  end
 end

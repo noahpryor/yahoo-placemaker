@@ -5,7 +5,9 @@ require 'yahoo-placemaker/reference'
 require 'yahoo-placemaker/extents'
 require 'yahoo-placemaker/place'
 
-class Yahoo::Placemaker::Document
+module Yahoo
+  module Placemaker
+    class Document
   attr_accessor :administrative_scope, :geographic_scope, :local_scopes, :references, :extents, :places
   def initialize(json)
 
@@ -69,5 +71,7 @@ class Yahoo::Placemaker::Document
       end
     end
 
+  end
+    end
   end
 end
