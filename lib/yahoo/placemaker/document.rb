@@ -11,16 +11,18 @@ module Yahoo
   attr_accessor :administrative_scope, :geographic_scope, :local_scopes, :references, :extents, :places
   def initialize(json)
 
-    if json['administrativeScope']
-      @administrative_scope = json['administrativeScope']
-    end
-
     if json['geographicScope']
       @geographic_scope = Yahoo::Placemaker::GeographicScope.new(json['geographicScope'])
     end
 
+    # If Yahoo has detected a continent then it will return some REALLY annoying data. It will
+    # give us back administrativeScope hash w/ a type of "Undefined" and coordinates of 0,0.
+    # Obviously this isn't useful information so we won't set @administrative_scope in that case
+
     if json['administrativeScope']
-      @administrative_scope = Yahoo::Placemaker::AdministrativeScope.new(json['administrativeScope'])
+      unless json['administrativeScope']['type'] == 'Undefined'
+        @administrative_scope = Yahoo::Placemaker::AdministrativeScope.new(json['administrativeScope'])
+      end
     end
 
     @places = Array.new

@@ -37,6 +37,13 @@ describe Yahoo::Placemaker do
     end
   end
 
+  it "should not have an administrative_scope" do
+    VCR.use_cassette('africa') do
+      response = Yahoo::Placemaker::extract "Africa"
+      response.document.administrative_scope.should == nil
+    end
+  end
+
   it "doesn't return any places for 'foobar'" do
     VCR.use_cassette('foobar') do
         response = Yahoo::Placemaker.extract "foobar"
