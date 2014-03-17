@@ -66,7 +66,7 @@ module Yahoo
     if json['referenceList']
       if json['referenceList'].class == Array
         json['referenceList'].each do |reference|
-          @references << Yahoo::Placemaker::Reference.new(reference)
+          @references << Yahoo::Placemaker::Reference.new(reference['reference'])
         end
       else
         @references << Yahoo::Placemaker::Reference.new(json['referenceList']['reference'])

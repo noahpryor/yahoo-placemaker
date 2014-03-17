@@ -33,6 +33,9 @@ module Yahoo
         response = ::Net::HTTP.new(host).start do |http|
           http.request(req)
         end
+        if defined?(Yahoo::Placemaker::DEBUG) && Yahoo::Placemaker::DEBUG
+          puts response.body
+        end
         json = ::JSON.parse(response.body)
 
         result = Yahoo::Placemaker::Response.new(json)
