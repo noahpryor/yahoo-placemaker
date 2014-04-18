@@ -4,13 +4,13 @@ require 'yahoo/placemaker/administrative_scope'
 require 'yahoo/placemaker/reference'
 require 'yahoo/placemaker/extents'
 require 'yahoo/placemaker/place'
-
+require 'json'
 module Yahoo
   module Placemaker
     class Document
-  attr_accessor :administrative_scope, :geographic_scope, :local_scopes, :references, :extents, :places
+  attr_accessor :administrative_scope, :geographic_scope, :local_scopes, :references, :extents, :json, :places
   def initialize(json)
-
+    @json = json
     if json['geographicScope']
       @geographic_scope = Yahoo::Placemaker::GeographicScope.new(json['geographicScope'])
     end
